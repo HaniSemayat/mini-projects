@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Ethiopian Phone Validator</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+<main class="container">
+
+    <h1>🇪🇹 Ethiopian Phone Validator</h1>
+
+    <p class="description">
+        Enter an Ethiopian mobile phone number to check its format.
+    </p>
+
+    <form id="phoneForm">
+
+        <label for="phone">Phone Number</label>
+
+        <div class="input-container">
+            <input
+                type="text"
+                id="phone"
+                placeholder="0912345678"
+                maxlength="14"
+                autocomplete="off"
+            >
+
+            <span id="counter">0/13</span>
+        </div>
+
+        <div class="buttons">
+            <button type="submit">Check Number</button>
+            <button type="button" id="clearBtn" class="clear-btn">
+                Clear
+            </button>
+        </div>
+
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <div class="examples">
+        <h2>Examples</h2>
+
+        <button class="example-btn" data-number="0912345678">
+            0912345678
+        </button>
+
+        <button class="example-btn" data-number="+251912345678">
+            +251912345678
+        </button>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
