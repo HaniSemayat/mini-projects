@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Mini Expense Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+<main class="container">
+
+    <header>
+        <h1>💰 Expense Tracker</h1>
+        <p>Keep track of your daily spending.</p>
+    </header>
+
+
+    <!-- Summary -->
+
+    <section class="summary">
+
+        <div class="summary-card">
+            <span>Total Spent</span>
+            <strong id="totalAmount">0 ETB</strong>
+        </div>
+
+        <div class="summary-card">
+            <span>Expenses</span>
+            <strong id="expenseCount">0</strong>
+        </div>
+
+    </section>
+
+
+    <!-- Add Expense -->
+
+    <section class="form-section">
+
+        <h2>Add Expense</h2>
+
+        <form id="expenseForm">
+
+            <div class="form-group">
+
+                <label for="expenseName">
+                    Expense Name
+                </label>
+
+                <input
+                    type="text"
+                    id="expenseName"
+                    placeholder="e.g. Lunch"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="expenseAmount">
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="expenseAmount"
+                        placeholder="150"
+                        min="1"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="expenseCategory">
+                        Category
+                    </label>
+
+                    <select id="expenseCategory">
+
+                        <option value="Food">
+                            Food
+                        </option>
+
+                        <option value="Transport">
+                            Transport
+                        </option>
+
+                        <option value="Education">
+                            Education
+                        </option>
+
+                        <option value="Shopping">
+                            Shopping
+                        </option>
+
+                        <option value="Bills">
+                            Bills
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="expenseDate">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="expenseDate"
+                >
+
+            </div>
+
+
+            <button type="submit" class="add-btn">
+                Add Expense
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Expense List -->
+
+    <section class="expenses-section">
+
+        <div class="expense-header">
+
+            <h2>Expenses</h2>
+
+            <select id="filterCategory">
+
+                <option value="All">
+                    All Categories
+                </option>
+
+                <option value="Food">
+                    Food
+                </option>
+
+                <option value="Transport">
+                    Transport
+                </option>
+
+                <option value="Education">
+                    Education
+                </option>
+
+                <option value="Shopping">
+                    Shopping
+                </option>
+
+                <option value="Bills">
+                    Bills
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div id="expenseList">
+
+            <p class="empty-message">
+                No expenses yet.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
