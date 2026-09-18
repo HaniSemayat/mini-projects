@@ -18,6 +18,56 @@
             <p>Keep track of your job and internship applications.</p>
         </header>
 
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>Total</span>
+                <strong>0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Applied</span>
+                <strong>0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Interview</span>
+                <strong>0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Offers</span>
+                <strong>0</strong>
+            </div>
+
+        </section>
+
+        <section class="applications-section">
+
+            <div class="application-header">
+
+                <h2>Applications</h2>
+
+                <select id="statusFilter">
+                    <option value="All">All Statuses</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Offer">Offer</option>
+                </select>
+
+            </div>
+
+            <div id="applicationList">
+
+                <p class="empty-message">
+                    No applications yet.
+                </p>
+
+            </div>
+
+        </section>
+
     </main>
 
     <script src="script.js"></script>
