@@ -131,6 +131,50 @@ header p {
     border-radius: 8px;
 }
 
+.application-card {
+    padding: 20px;
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    background: white;
+}
+
+.application-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.application-card h3 {
+    margin: 0 0 6px;
+}
+
+.company-name {
+    margin: 0;
+    color: #666;
+}
+
+.application-location,
+.application-date,
+.application-notes {
+    color: #666;
+    font-size: 14px;
+}
+
+.status-badge {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #eee;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
 @media (max-width: 700px) {
 
     body {
@@ -147,6 +191,10 @@ header p {
 
     .application-header {
         align-items: stretch;
+        flex-direction: column;
+    }
+
+    .application-card-header {
         flex-direction: column;
     }
 

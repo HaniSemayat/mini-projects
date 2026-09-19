@@ -1,3 +1,5 @@
+const applicationList = document.querySelector("#applicationList");
+
 const applications = [
     {
         id: 1,
@@ -34,3 +36,42 @@ const applications = [
 ];
 
 console.log(applications);
+
+function renderApplications() {
+    applicationList.innerHTML = "";
+
+    applications.forEach(function (application) {
+        const applicationCard = document.createElement("article");
+
+        applicationCard.className = "application-card";
+
+        applicationCard.innerHTML = `
+            <div class="application-card-header">
+                <div>
+                    <h3>${application.position}</h3>
+                    <p class="company-name">${application.company}</p>
+                </div>
+
+                <span class="status-badge">
+                    ${application.status}
+                </span>
+            </div>
+
+            <p class="application-location">
+                📍 ${application.location}
+            </p>
+
+            <p class="application-date">
+                Applied: ${application.date}
+            </p>
+
+            <p class="application-notes">
+                ${application.notes}
+            </p>
+        `;
+
+        applicationList.appendChild(applicationCard);
+    });
+}
+
+renderApplications();
