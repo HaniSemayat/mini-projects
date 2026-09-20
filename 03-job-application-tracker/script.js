@@ -37,6 +37,9 @@ const linkInput =
 const notesInput =
     document.querySelector("#notes");
 
+const statusFilter =
+    document.querySelector("#statusFilter");
+
 
 // Application data
 
@@ -79,9 +82,19 @@ const applications = [
 // Render applications
 
 function renderApplications() {
+    const selectedStatus = statusFilter.value;
+
+    let applicationsToRender = applications;
+
+    if (selectedStatus !== "All") {
+        applicationsToRender = applications.filter(function (application) {
+            return application.status === selectedStatus;
+        });
+    }
+
     applicationList.innerHTML = "";
 
-    applications.forEach(function (application) {
+    applicationsToRender.forEach(function (application) {
         const applicationCard =
             document.createElement("article");
 
@@ -186,3 +199,10 @@ applicationForm.addEventListener("submit", function (event) {
 
     applicationForm.reset();
 });
+
+
+statusFilter.addEventListener("change", function () {
+    renderApplications();
+});
+
+renderApplications();
