@@ -146,13 +146,23 @@
 
                 <h2>Applications</h2>
 
-                <select id="statusFilter">
-                    <option value="All">All Statuses</option>
-                    <option value="Applied">Applied</option>
-                    <option value="Interview">Interview</option>
-                    <option value="Rejected">Rejected</option>
-                    <option value="Offer">Offer</option>
-                </select>
+                <div class="application-filters">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search applications..."
+                    >
+
+                    <select id="statusFilter">
+                        <option value="All">All</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Rejected">Rejected</option>
+                        <option value="Offer">Offer</option>
+                    </select>
+
+                </div>
 
             </div>
 

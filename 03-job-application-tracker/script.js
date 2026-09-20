@@ -31,6 +31,7 @@ const dateInput =
 const statusInput =
     document.querySelector("#status");
 
+
 const linkInput =
     document.querySelector("#link");
 
@@ -39,6 +40,9 @@ const notesInput =
 
 const statusFilter =
     document.querySelector("#statusFilter");
+
+const searchInput =
+    document.querySelector("#searchInput");
 
 
 // Application data
@@ -83,12 +87,22 @@ const applications = [
 
 function renderApplications() {
     const selectedStatus = statusFilter.value;
+    const searchText = searchInput.value.trim().toLowerCase();
 
     let applicationsToRender = applications;
 
     if (selectedStatus !== "All") {
-        applicationsToRender = applications.filter(function (application) {
+        applicationsToRender = applicationsToRender.filter(function (application) {
             return application.status === selectedStatus;
+        });
+    }
+
+    if (searchText) {
+        applicationsToRender = applicationsToRender.filter(function (application) {
+            return (
+                application.company.toLowerCase().includes(searchText) ||
+                application.position.toLowerCase().includes(searchText)
+            );
         });
     }
 
@@ -236,6 +250,9 @@ statusFilter.addEventListener("change", function () {
     renderApplications();
 });
 
+searchInput.addEventListener("input", function () {
+    renderApplications();
+});
 
 // Initial display
 

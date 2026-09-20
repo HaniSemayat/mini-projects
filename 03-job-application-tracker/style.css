@@ -271,6 +271,24 @@ header p {
     opacity: 0.8;
 }
 
+.application-filters {
+    display: flex;
+    gap: 10px;
+}
+
+#searchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #555;
+}
+
 @media (max-width: 700px) {
 
     body {
@@ -288,6 +306,14 @@ header p {
     .application-header {
         align-items: stretch;
         flex-direction: column;
+    }
+
+    .application-filters {
+        flex-direction: column;
+    }
+
+    #searchInput {
+        width: 100%;
     }
 
     .application-card-header {
