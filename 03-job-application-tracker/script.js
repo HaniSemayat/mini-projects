@@ -126,10 +126,45 @@ function renderApplications() {
             <p class="application-notes">
                 ${application.notes}
             </p>
+
+            <button
+                class="delete-btn"
+                data-id="${application.id}"
+            >
+                Delete
+            </button>
         `;
 
         applicationList.appendChild(applicationCard);
     });
+
+    const deleteButtons =
+        document.querySelectorAll(".delete-btn");
+
+    deleteButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const id = Number(button.dataset.id);
+
+            deleteApplication(id);
+        });
+    });
+}
+
+
+// Delete application
+
+function deleteApplication(id) {
+    const applicationIndex =
+        applications.findIndex(function (application) {
+            return application.id === id;
+        });
+
+    if (applicationIndex !== -1) {
+        applications.splice(applicationIndex, 1);
+    }
+
+    renderApplications();
+    updateStatistics();
 }
 
 
@@ -155,12 +190,6 @@ function updateStatistics() {
     interviewApplications.textContent = interviews;
     offerApplications.textContent = offers;
 }
-
-
-// Initial display
-
-renderApplications();
-updateStatistics();
 
 
 // Add new application
@@ -201,8 +230,14 @@ applicationForm.addEventListener("submit", function (event) {
 });
 
 
+// Filter applications by status
+
 statusFilter.addEventListener("change", function () {
     renderApplications();
 });
 
+
+// Initial display
+
 renderApplications();
+updateStatistics();

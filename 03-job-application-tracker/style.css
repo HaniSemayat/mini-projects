@@ -257,6 +257,20 @@ header p {
     opacity: 0.9;
 }
 
+.delete-btn {
+    margin-top: 15px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #ddd;
+    color: #222;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    opacity: 0.8;
+}
+
 @media (max-width: 700px) {
 
     body {
@@ -288,3 +302,4 @@ header p {
         grid-template-columns: 1fr;
     }
 }
+
