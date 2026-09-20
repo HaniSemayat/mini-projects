@@ -1,4 +1,5 @@
-const applicationList = document.querySelector("#applicationList");
+const applicationList =
+    document.querySelector("#applicationList");
 
 const totalApplications =
     document.querySelector("#totalApplications");
@@ -11,6 +12,33 @@ const interviewApplications =
 
 const offerApplications =
     document.querySelector("#offerApplications");
+
+const applicationForm =
+    document.querySelector("#applicationForm");
+
+const companyInput =
+    document.querySelector("#company");
+
+const positionInput =
+    document.querySelector("#position");
+
+const locationInput =
+    document.querySelector("#location");
+
+const dateInput =
+    document.querySelector("#date");
+
+const statusInput =
+    document.querySelector("#status");
+
+const linkInput =
+    document.querySelector("#link");
+
+const notesInput =
+    document.querySelector("#notes");
+
+
+// Application data
 
 const applications = [
     {
@@ -47,13 +75,15 @@ const applications = [
     }
 ];
 
-console.log(applications);
+
+// Render applications
 
 function renderApplications() {
     applicationList.innerHTML = "";
 
     applications.forEach(function (application) {
-        const applicationCard = document.createElement("article");
+        const applicationCard =
+            document.createElement("article");
 
         applicationCard.className = "application-card";
 
@@ -61,7 +91,10 @@ function renderApplications() {
             <div class="application-card-header">
                 <div>
                     <h3>${application.position}</h3>
-                    <p class="company-name">${application.company}</p>
+
+                    <p class="company-name">
+                        ${application.company}
+                    </p>
                 </div>
 
                 <span class="status-badge">
@@ -87,6 +120,8 @@ function renderApplications() {
 }
 
 
+// Update dashboard statistics
+
 function updateStatistics() {
     const total = applications.length;
 
@@ -109,5 +144,40 @@ function updateStatistics() {
 }
 
 
+// Initial display
+
 renderApplications();
 updateStatistics();
+
+
+// Add new application
+
+applicationForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const company = companyInput.value.trim();
+    const position = positionInput.value.trim();
+    const location = locationInput.value.trim();
+    const date = dateInput.value;
+    const status = statusInput.value;
+    const link = linkInput.value.trim();
+    const notes = notesInput.value.trim();
+
+    const newApplication = {
+        id: Date.now(),
+        company: company,
+        position: position,
+        location: location,
+        date: date,
+        status: status,
+        link: link,
+        notes: notes
+    };
+
+    applications.push(newApplication);
+
+    renderApplications();
+    updateStatistics();
+
+    applicationForm.reset();
+});

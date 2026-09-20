@@ -42,6 +42,104 @@
 
         </section>
 
+        <section class="form-section">
+
+            <h2>Add Application</h2>
+
+            <form id="applicationForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="company">Company</label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            placeholder="e.g. Ethio Software"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="position">Position</label>
+
+                        <input
+                            type="text"
+                            id="position"
+                            placeholder="e.g. Backend Developer"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="e.g. Addis Ababa"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Application Date</label>
+
+                        <input
+                            type="date"
+                            id="date"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+
+                        <select id="status">
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Rejected">Rejected</option>
+                            <option value="Offer">Offer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="link">Application Link</label>
+
+                        <input
+                            type="url"
+                            id="link"
+                            placeholder="https://example.com"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="notes">Notes</label>
+
+                    <textarea
+                        id="notes"
+                        rows="3"
+                        placeholder="Add any useful notes..."
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="add-btn">
+                    Add Application
+                </button>
+
+            </form>
+
+        </section>
+
         <section class="applications-section">
 
             <div class="application-header">

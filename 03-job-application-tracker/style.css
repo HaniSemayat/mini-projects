@@ -175,6 +175,88 @@ header p {
     font-weight: bold;
 }
 
+.form-section {
+    margin-bottom: 35px;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: #555;
+}
+
+.add-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    opacity: 0.9;
+}
+
 @media (max-width: 700px) {
 
     body {
@@ -200,5 +282,9 @@ header p {
 
     #statusFilter {
         width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
     }
 }
