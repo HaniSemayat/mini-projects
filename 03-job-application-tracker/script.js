@@ -163,6 +163,11 @@ applicationForm.addEventListener("submit", function (event) {
     const link = linkInput.value.trim();
     const notes = notesInput.value.trim();
 
+    if (!company || !position || !location || !date) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
     const newApplication = {
         id: Date.now(),
         company: company,
