@@ -1,5 +1,17 @@
 const applicationList = document.querySelector("#applicationList");
 
+const totalApplications =
+    document.querySelector("#totalApplications");
+
+const appliedApplications =
+    document.querySelector("#appliedApplications");
+
+const interviewApplications =
+    document.querySelector("#interviewApplications");
+
+const offerApplications =
+    document.querySelector("#offerApplications");
+
 const applications = [
     {
         id: 1,
@@ -74,4 +86,28 @@ function renderApplications() {
     });
 }
 
+
+function updateStatistics() {
+    const total = applications.length;
+
+    const applied = applications.filter(function (application) {
+        return application.status === "Applied";
+    }).length;
+
+    const interviews = applications.filter(function (application) {
+        return application.status === "Interview";
+    }).length;
+
+    const offers = applications.filter(function (application) {
+        return application.status === "Offer";
+    }).length;
+
+    totalApplications.textContent = total;
+    appliedApplications.textContent = applied;
+    interviewApplications.textContent = interviews;
+    offerApplications.textContent = offers;
+}
+
+
 renderApplications();
+updateStatistics();
