@@ -58,9 +58,9 @@ const sortFilter =
 let editingApplicationId = null;
 
 
-// Application data
+// Default application data
 
-const applications = [
+const defaultApplications = [
     {
         id: 1,
         company: "Ethio Software",
@@ -94,6 +94,26 @@ const applications = [
         notes: "Received internship offer"
     }
 ];
+
+
+// Load applications from localStorage
+
+let applications =
+    JSON.parse(
+        localStorage.getItem("applications")
+    ) || defaultApplications;
+
+
+// Save applications to localStorage
+
+function saveApplications() {
+
+    localStorage.setItem(
+        "applications",
+        JSON.stringify(applications)
+    );
+
+}
 
 
 // Render applications
@@ -220,6 +240,7 @@ function renderApplications() {
         `;
 
         return;
+
     }
 
 
@@ -365,6 +386,11 @@ function deleteApplication(id) {
         );
 
     }
+
+
+    // Save changes
+
+    saveApplications();
 
 
     renderApplications();
@@ -599,6 +625,11 @@ applicationForm.addEventListener(
             );
 
         }
+
+
+        // Save changes
+
+        saveApplications();
 
 
         // Refresh interface
