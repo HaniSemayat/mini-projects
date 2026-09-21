@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,9 @@
             <h1>💼 Job Application Tracker</h1>
             <p>Keep track of your job and internship applications.</p>
         </header>
+
+
+        <!-- Dashboard statistics -->
 
         <section class="stats">
 
@@ -42,6 +46,9 @@
 
         </section>
 
+
+        <!-- Add / Edit application form -->
+
         <section class="form-section">
 
             <h2>Add Application</h2>
@@ -51,78 +58,123 @@
                 <div class="form-row">
 
                     <div class="form-group">
-                        <label for="company">Company</label>
+
+                        <label for="company">
+                            Company
+                        </label>
 
                         <input
                             type="text"
                             id="company"
                             placeholder="e.g. Ethio Software"
                         >
+
                     </div>
 
+
                     <div class="form-group">
-                        <label for="position">Position</label>
+
+                        <label for="position">
+                            Position
+                        </label>
 
                         <input
                             type="text"
                             id="position"
                             placeholder="e.g. Backend Developer"
                         >
+
                     </div>
 
                 </div>
 
+
                 <div class="form-row">
 
                     <div class="form-group">
-                        <label for="location">Location</label>
+
+                        <label for="location">
+                            Location
+                        </label>
 
                         <input
                             type="text"
                             id="location"
                             placeholder="e.g. Addis Ababa"
                         >
+
                     </div>
 
+
                     <div class="form-group">
-                        <label for="date">Application Date</label>
+
+                        <label for="date">
+                            Application Date
+                        </label>
 
                         <input
                             type="date"
                             id="date"
                         >
+
                     </div>
 
                 </div>
 
+
                 <div class="form-row">
 
                     <div class="form-group">
-                        <label for="status">Status</label>
+
+                        <label for="status">
+                            Status
+                        </label>
 
                         <select id="status">
-                            <option value="Applied">Applied</option>
-                            <option value="Interview">Interview</option>
-                            <option value="Rejected">Rejected</option>
-                            <option value="Offer">Offer</option>
+
+                            <option value="Applied">
+                                Applied
+                            </option>
+
+                            <option value="Interview">
+                                Interview
+                            </option>
+
+                            <option value="Rejected">
+                                Rejected
+                            </option>
+
+                            <option value="Offer">
+                                Offer
+                            </option>
+
                         </select>
+
                     </div>
 
+
                     <div class="form-group">
-                        <label for="link">Application Link</label>
+
+                        <label for="link">
+                            Application Link
+                        </label>
 
                         <input
                             type="url"
                             id="link"
                             placeholder="https://example.com"
                         >
+
                     </div>
 
                 </div>
 
+
                 <div class="form-group">
 
-                    <label for="notes">Notes</label>
+                    <label for="notes">
+                        Notes
+                    </label>
 
                     <textarea
                         id="notes"
@@ -132,7 +184,11 @@
 
                 </div>
 
-                <button type="submit" class="add-btn">
+
+                <button
+                    type="submit"
+                    class="add-btn"
+                >
                     Add Application
                 </button>
 
@@ -140,11 +196,15 @@
 
         </section>
 
+
+        <!-- Applications -->
+
         <section class="applications-section">
 
             <div class="application-header">
 
                 <h2>Applications</h2>
+
 
                 <div class="application-filters">
 
@@ -154,17 +214,56 @@
                         placeholder="Search applications..."
                     >
 
+
                     <select id="statusFilter">
-                        <option value="All">All</option>
-                        <option value="Applied">Applied</option>
-                        <option value="Interview">Interview</option>
-                        <option value="Rejected">Rejected</option>
-                        <option value="Offer">Offer</option>
+
+                        <option value="All">
+                            All
+                        </option>
+
+                        <option value="Applied">
+                            Applied
+                        </option>
+
+                        <option value="Interview">
+                            Interview
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                        <option value="Offer">
+                            Offer
+                        </option>
+
+                    </select>
+
+
+                    <select id="sortFilter">
+
+                        <option value="newest">
+                            Newest First
+                        </option>
+
+                        <option value="oldest">
+                            Oldest First
+                        </option>
+
+                        <option value="companyAZ">
+                            Company A-Z
+                        </option>
+
+                        <option value="companyZA">
+                            Company Z-A
+                        </option>
+
                     </select>
 
                 </div>
 
             </div>
+
 
             <div id="applicationList">
 
@@ -178,6 +277,9 @@
 
     </main>
 
+
     <script src="script.js"></script>
+
 </body>
+
 </html>

@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -12,6 +13,7 @@ body {
 
     padding: 30px 20px;
 }
+
 
 .container {
     width: 100%;
@@ -28,19 +30,29 @@ body {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
+
+/* Header */
+
 header {
     text-align: center;
+
     margin-bottom: 30px;
 }
+
 
 header h1 {
     margin: 0 0 8px;
 }
 
+
 header p {
     margin: 0;
+
     color: #666;
 }
+
+
+/* Dashboard statistics */
 
 .stats {
     display: grid;
@@ -52,6 +64,7 @@ header p {
     margin-bottom: 35px;
 }
 
+
 .stat-card {
     padding: 20px;
 
@@ -61,6 +74,7 @@ header p {
 
     text-align: center;
 }
+
 
 .stat-card span {
     display: block;
@@ -72,116 +86,23 @@ header p {
     margin-bottom: 8px;
 }
 
+
 .stat-card strong {
     font-size: 26px;
 }
 
-.application-header {
-    display: flex;
 
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-bottom: 20px;
-}
-
-.application-header h2 {
-    margin: 0;
-}
-
-#statusFilter {
-    width: auto;
-
-    padding: 10px;
-
-    border: 1px solid #ccc;
-
-    border-radius: 6px;
-
-    background: white;
-
-    font-size: 14px;
-}
-
-.empty-message {
-    text-align: center;
-
-    color: #777;
-
-    padding: 40px 20px;
-
-    border: 1px dashed #ccc;
-
-    border-radius: 8px;
-}
-
-
-.empty-message {
-    text-align: center;
-
-    color: #777;
-
-    padding: 40px 20px;
-
-    border: 1px dashed #ccc;
-
-    border-radius: 8px;
-}
-
-.application-card {
-    padding: 20px;
-    margin-bottom: 15px;
-
-    border: 1px solid #ddd;
-    border-radius: 10px;
-
-    background: white;
-}
-
-.application-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-.application-card h3 {
-    margin: 0 0 6px;
-}
-
-.company-name {
-    margin: 0;
-    color: #666;
-}
-
-.application-location,
-.application-date,
-.application-notes {
-    color: #666;
-    font-size: 14px;
-}
-
-.status-badge {
-    padding: 6px 10px;
-
-    border-radius: 20px;
-
-    background: #eee;
-
-    font-size: 13px;
-    font-weight: bold;
-}
+/* Application form */
 
 .form-section {
     margin-bottom: 35px;
 }
 
+
 .form-section h2 {
     margin-bottom: 20px;
 }
+
 
 .form-row {
     display: grid;
@@ -191,9 +112,11 @@ header p {
     gap: 15px;
 }
 
+
 .form-group {
     margin-bottom: 15px;
 }
+
 
 .form-group label {
     display: block;
@@ -204,6 +127,7 @@ header p {
 
     font-size: 14px;
 }
+
 
 .form-group input,
 .form-group select,
@@ -223,9 +147,11 @@ header p {
     background: white;
 }
 
+
 .form-group textarea {
     resize: vertical;
 }
+
 
 .form-group input:focus,
 .form-group select:focus,
@@ -234,6 +160,7 @@ header p {
 
     border-color: #555;
 }
+
 
 .add-btn {
     width: 100%;
@@ -253,41 +180,189 @@ header p {
     cursor: pointer;
 }
 
+
 .add-btn:hover {
     opacity: 0.9;
 }
 
-.delete-btn {
-    margin-top: 15px;
-    padding: 8px 12px;
-    border: none;
+
+/* Application header and filters */
+
+.application-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.application-header h2 {
+    margin: 0;
+}
+
+
+.application-filters {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+#searchInput,
+#statusFilter,
+#sortFilter {
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
     border-radius: 6px;
-    background: #ddd;
-    color: #222;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+
+#searchInput {
+    min-width: 220px;
+}
+
+
+#searchInput:focus,
+#statusFilter:focus,
+#sortFilter:focus {
+    outline: none;
+
+    border-color: #555;
+}
+
+
+/* Empty state */
+
+.empty-message {
+    text-align: center;
+
+    color: #777;
+
+    padding: 40px 20px;
+
+    border: 1px dashed #ccc;
+
+    border-radius: 8px;
+}
+
+
+/* Application cards */
+
+.application-card {
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+
+.application-card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+
+.application-card h3 {
+    margin: 0 0 6px;
+}
+
+
+.company-name {
+    margin: 0;
+
+    color: #666;
+}
+
+
+.application-location,
+.application-date,
+.application-notes {
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+.status-badge {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #eee;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* Application buttons */
+
+.application-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
     cursor: pointer;
 }
 
+
+.edit-btn {
+    background: #eee;
+
+    color: #222;
+}
+
+
+.delete-btn {
+    background: #ddd;
+
+    color: #222;
+}
+
+
+.edit-btn:hover,
 .delete-btn:hover {
     opacity: 0.8;
 }
 
-.application-filters {
-    display: flex;
-    gap: 10px;
-}
 
-#searchInput {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 14px;
-}
-
-#searchInput:focus {
-    outline: none;
-    border-color: #555;
-}
+/* Mobile */
 
 @media (max-width: 700px) {
 
@@ -295,37 +370,43 @@ header p {
         padding: 15px 10px;
     }
 
+
     .container {
         padding: 20px;
     }
+
 
     .stats {
         grid-template-columns: 1fr 1fr;
     }
 
+
     .application-header {
         align-items: stretch;
+
         flex-direction: column;
     }
+
 
     .application-filters {
         flex-direction: column;
     }
 
-    #searchInput {
+
+    #searchInput,
+    #statusFilter,
+    #sortFilter {
         width: 100%;
     }
+
 
     .application-card-header {
         flex-direction: column;
     }
 
-    #statusFilter {
-        width: 100%;
-    }
 
     .form-row {
         grid-template-columns: 1fr;
     }
-}
 
+}
